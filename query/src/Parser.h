@@ -19,7 +19,7 @@
 #include <string>
 #include <gumbo.h>
 
-#include <query.h>
+#include <Gumbo-query.h>
 
 #include "Selector.h"
 

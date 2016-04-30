@@ -22,7 +22,7 @@
 
 #include "Object.h"
 
-#include <query.h>
+#include <Gumbo-query.h>
 
 namespace GumboQuery
 {

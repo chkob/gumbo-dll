@@ -94,7 +94,7 @@
     <ClInclude Include="..\src\QueryUtil.h" />
     <ClInclude Include="..\src\Selection.h" />
     <ClInclude Include="..\src\Selector.h" />
-    <ClInclude Include="query.h" />
+    <ClInclude Include="Gumbo-query.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

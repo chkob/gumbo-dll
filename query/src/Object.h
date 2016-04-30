@@ -13,7 +13,7 @@
  *
  **/
 
-#include <query.h>
+#include <Gumbo-query.h>
 
 #ifndef OBJECT_H_
 #define OBJECT_H_
