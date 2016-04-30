@@ -24,31 +24,34 @@
 
 #include <query.h>
 
-class CNode;
-
-class GUMBO_QUERY_API CSelection : public CObject
+namespace GumboQuery
 {
+   class CNode;
 
-public:
+   class GUMBO_QUERY_API CSelection : public CObject
+   {
 
-   CSelection(GumboNode* apNode);
+   public:
 
-   CSelection(std::vector<GumboNode*> aNodes);
+      CSelection(GumboNode* apNode);
 
-   virtual ~CSelection();
+      CSelection(std::vector<GumboNode*> aNodes);
 
-public:
+      virtual ~CSelection();
 
-   CSelection find(std::string aSelector);
+   public:
 
-   CNode nodeAt(size_t i);
+      CSelection find(std::string aSelector);
 
-   size_t nodeNum();
+      CNode nodeAt(size_t i);
 
-private:
+      size_t nodeNum();
 
-   std::vector<GumboNode*> mNodes;
-};
+   private:
+
+      std::vector<GumboNode*> mNodes;
+   };
+}
 
 #endif /* SELECTION_H_ */
 

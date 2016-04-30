@@ -18,26 +18,29 @@
 #ifndef OBJECT_H_
 #define OBJECT_H_
 
-class GUMBO_QUERY_API CObject
+namespace GumboQuery
 {
-public:
+   class GUMBO_QUERY_API CObject
+   {
+   public:
 
-   CObject();
+      CObject();
 
-   virtual ~CObject();
+      virtual ~CObject();
 
-public:
+   public:
 
-   virtual void retain();
+      virtual void retain();
 
-   virtual void release();
+      virtual void release();
 
-   unsigned int references();
+      unsigned int references();
 
-private:
+   private:
 
-   int mReferences;
-};
+      int mReferences;
+   };
+}
 
 #endif /* OBJECT_H_ */
 

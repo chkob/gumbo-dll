@@ -10,13 +10,3 @@
 #define GUMBO_QUERY_API __declspec(dllimport)
 #endif
 
-//// This class is exported from the query.dll
-//class QUERY_API Cquery {
-//public:
-//	Cquery(void);
-//	// TODO: add your methods here.
-//};
-//
-//extern QUERY_API int nquery;
-//
-//QUERY_API int fnquery(void);

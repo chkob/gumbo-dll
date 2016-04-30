@@ -23,70 +23,73 @@
 
 #include "Selector.h"
 
-class GUMBO_QUERY_API CParser
+namespace GumboQuery
 {
-private:
+   class GUMBO_QUERY_API CParser
+   {
+   private:
 
-   CParser(std::string aInput);
+      CParser(std::string aInput);
 
-public:
+   public:
 
-   virtual ~CParser();
+      virtual ~CParser();
 
-public:
+   public:
 
-   static CSelector* create(std::string aInput);
+      static CSelector* create(std::string aInput);
 
-private:
+   private:
 
-   CSelector* parseSelectorGroup();
+      CSelector* parseSelectorGroup();
 
-   CSelector* parseSelector();
+      CSelector* parseSelector();
 
-   CSelector* parseSimpleSelectorSequence();
+      CSelector* parseSimpleSelectorSequence();
 
-   void parseNth(int& aA, int& aB);
+      void parseNth(int& aA, int& aB);
 
-   int parseInteger();
+      int parseInteger();
 
-   CSelector* parsePseudoclassSelector();
+      CSelector* parsePseudoclassSelector();
 
-   CSelector* parseAttributeSelector();
+      CSelector* parseAttributeSelector();
 
-   CSelector* parseClassSelector();
+      CSelector* parseClassSelector();
 
-   CSelector* parseIDSelector();
+      CSelector* parseIDSelector();
 
-   CSelector* parseTypeSelector();
+      CSelector* parseTypeSelector();
 
-   bool consumeClosingParenthesis();
+      bool consumeClosingParenthesis();
 
-   bool consumeParenthesis();
+      bool consumeParenthesis();
 
-   bool skipWhitespace();
+      bool skipWhitespace();
 
-   std::string parseString();
+      std::string parseString();
 
-   std::string parseName();
+      std::string parseName();
 
-   std::string parseIdentifier();
+      std::string parseIdentifier();
 
-   bool nameChar(char c);
+      bool nameChar(char c);
 
-   bool nameStart(char c);
+      bool nameStart(char c);
 
-   bool hexDigit(char c);
+      bool hexDigit(char c);
 
-   std::string parseEscape();
+      std::string parseEscape();
 
-   std::string error(std::string message);
+      std::string error(std::string message);
 
-private:
+   private:
 
-   std::string mInput;
+      std::string mInput;
 
-   size_t mOffset;
-};
+      size_t mOffset;
+   };
+}
 
 #endif /* PARSER_H_ */
 

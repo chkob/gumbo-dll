@@ -21,52 +21,55 @@
 
 #include <query.h>
 
-class CSelection;
-
-class GUMBO_QUERY_API CNode
+namespace GumboQuery
 {
-public:
+   class CSelection;
 
-   CNode(GumboNode* apNode = NULL);
+   class GUMBO_QUERY_API CNode
+   {
+   public:
 
-   virtual ~CNode();
+      CNode(GumboNode* apNode = NULL);
 
-public:
+      virtual ~CNode();
 
-   bool valid();
+   public:
 
-   CNode parent();
+      bool valid();
 
-   CNode nextSibling();
+      CNode parent();
 
-   CNode prevSibling();
+      CNode nextSibling();
 
-   unsigned int childNum();
+      CNode prevSibling();
 
-   CNode childAt(size_t i);
+      unsigned int childNum();
 
-   std::string attribute(std::string key);
+      CNode childAt(size_t i);
 
-   std::string text();
+      std::string attribute(std::string key);
 
-   std::string ownText();
+      std::string text();
 
-   size_t startPos();
+      std::string ownText();
 
-   size_t endPos();
+      size_t startPos();
 
-   size_t startPosOuter();
+      size_t endPos();
 
-   size_t endPosOuter();
+      size_t startPosOuter();
 
-   std::string tag();
+      size_t endPosOuter();
 
-   CSelection find(std::string aSelector);
+      std::string tag();
 
-private:
+      CSelection find(std::string aSelector);
 
-   GumboNode* mpNode;
-};
+   private:
+
+      GumboNode* mpNode;
+   };
+}
 
 #endif /* NODE_H_ */
 

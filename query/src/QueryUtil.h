@@ -22,27 +22,30 @@
 
 #include <query.h>
 
-class GUMBO_QUERY_API CQueryUtil
+namespace GumboQuery
 {
-public:
+   class GUMBO_QUERY_API CQueryUtil
+   {
+   public:
 
-   static std::string tolower(std::string s);
+      static std::string tolower(std::string s);
 
-   static std::vector<GumboNode*> unionNodes(std::vector<GumboNode*> aNodes1,
-      std::vector<GumboNode*> aNode2);
+      static std::vector<GumboNode*> unionNodes(std::vector<GumboNode*> aNodes1,
+         std::vector<GumboNode*> aNode2);
 
-   static bool nodeExists(std::vector<GumboNode*> aNodes, GumboNode* apNode);
+      static bool nodeExists(std::vector<GumboNode*> aNodes, GumboNode* apNode);
 
-   static std::string nodeText(GumboNode* apNode);
+      static std::string nodeText(GumboNode* apNode);
 
-   static std::string nodeOwnText(GumboNode* apNode);
+      static std::string nodeOwnText(GumboNode* apNode);
 
-private:
+   private:
 
-   static void writeNodeText(GumboNode* apNode, std::string& aText);
+      static void writeNodeText(GumboNode* apNode, std::string& aText);
 
 
-};
+   };
+}
 
 #endif /* QUERYUTIL_H_ */
 
