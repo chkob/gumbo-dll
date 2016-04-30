@@ -36,12 +36,14 @@ namespace GumboQuery
       static bool nodeExists(std::vector<GumboNode*> aNodes, GumboNode* apNode);
 
       static std::string nodeText(GumboNode* apNode);
+      static std::string nodeTextWithTag(GumboNode* apNode);
 
       static std::string nodeOwnText(GumboNode* apNode);
 
    private:
 
       static void writeNodeText(GumboNode* apNode, std::string& aText);
+      static void writeNodeTextWithTag(GumboNode* apNode, std::string& aText);
 
 
    };

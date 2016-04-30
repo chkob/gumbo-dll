@@ -71,6 +71,13 @@ namespace GumboQuery
       return text;
    }
 
+   std::string CQueryUtil::nodeTextWithTag(GumboNode* apNode)
+   {
+      std::string text;
+      writeNodeTextWithTag(apNode, text);
+      return text;
+   }
+
    std::string CQueryUtil::nodeOwnText(GumboNode* apNode)
    {
       std::string text;
@@ -107,6 +114,35 @@ namespace GumboQuery
             GumboNode* child = (GumboNode*) children.data[i];
             writeNodeText(child, aText);
          }
+         break;
+      }
+      default:
+         break;
+      }
+   }
+
+   void CQueryUtil::writeNodeTextWithTag(GumboNode* apNode, std::string& aText)
+   {
+      switch (apNode->type)
+      {
+      case GUMBO_NODE_TEXT:
+         aText = "<value>" + aText;
+         aText.append(apNode->v.text.text);
+         aText += "</value>";
+         break;
+      case GUMBO_NODE_ELEMENT:
+      {
+         GumboVector children = apNode->v.element.children;
+         aText = '<' + apNode->v.element.tag;
+         aText += '>';
+         for (unsigned int i = 0; i < children.length; i++)
+         {
+            GumboNode* child = (GumboNode*) children.data[i];
+            writeNodeTextWithTag(child, aText);
+         }
+         aText += "</";
+         aText += apNode->v.element.tag;
+         aText += '>';
          break;
       }
       default:

@@ -96,6 +96,11 @@ namespace GumboQuery
       return CQueryUtil::nodeText(mpNode);
    }
 
+   std::string CNode::textWithTag()
+   {
+      return CQueryUtil::nodeTextWithTag(mpNode);
+   }
+
    std::string CNode::ownText()
    {
       return CQueryUtil::nodeOwnText(mpNode);

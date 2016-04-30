@@ -51,6 +51,8 @@ namespace GumboQuery
 
       std::string text();
 
+      std::string textWithTag();
+
       std::string ownText();
 
       size_t startPos();
