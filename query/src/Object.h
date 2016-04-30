@@ -1,7 +1,7 @@
 /***************************************************************************
- * 
+ *
  * $Id$
- * 
+ *
  **************************************************************************/
 
 /**
@@ -9,32 +9,34 @@
  * @author $Author$(hoping@baimashi.com)
  * @date $Date$
  * @version $Revision$
- * @brief 
- *  
+ * @brief
+ *
  **/
+
+#include <query.h>
 
 #ifndef OBJECT_H_
 #define OBJECT_H_
 
-class CObject
+class GUMBO_QUERY_API CObject
 {
-	public:
+public:
 
-		CObject();
+   CObject();
 
-		virtual ~CObject();
+   virtual ~CObject();
 
-	public:
+public:
 
-		virtual void retain();
+   virtual void retain();
 
-		virtual void release();
+   virtual void release();
 
-		unsigned int references();
+   unsigned int references();
 
-	private:
+private:
 
-		int mReferences;
+   int mReferences;
 };
 
 #endif /* OBJECT_H_ */

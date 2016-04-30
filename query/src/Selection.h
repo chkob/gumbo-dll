@@ -1,7 +1,7 @@
 /***************************************************************************
- * 
+ *
  * $Id$
- * 
+ *
  **************************************************************************/
 
 /**
@@ -9,42 +9,45 @@
  * @author $Author$(hoping@baimashi.com)
  * @date $Date$
  * @version $Revision$
- * @brief 
- *  
+ * @brief
+ *
  **/
 
 #ifndef SELECTION_H_
 #define SELECTION_H_
 
 #include "Object.h"
+
 #include <vector>
 #include <string>
 #include <gumbo.h>
 
+#include <query.h>
+
 class CNode;
 
-class CSelection: public CObject
+class GUMBO_QUERY_API CSelection : public CObject
 {
 
-	public:
+public:
 
-		CSelection(GumboNode* apNode);
+   CSelection(GumboNode* apNode);
 
-		CSelection(std::vector<GumboNode*> aNodes);
+   CSelection(std::vector<GumboNode*> aNodes);
 
-		virtual ~CSelection();
+   virtual ~CSelection();
 
-	public:
+public:
 
-		CSelection find(std::string aSelector);
+   CSelection find(std::string aSelector);
 
-		CNode nodeAt(size_t i);
+   CNode nodeAt(size_t i);
 
-		size_t nodeNum();
+   size_t nodeNum();
 
-	private:
+private:
 
-		std::vector<GumboNode*> mNodes;
+   std::vector<GumboNode*> mNodes;
 };
 
 #endif /* SELECTION_H_ */

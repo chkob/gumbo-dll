@@ -1,7 +1,7 @@
 /***************************************************************************
- * 
+ *
  * $Id$
- * 
+ *
  **************************************************************************/
 
 /**
@@ -9,8 +9,8 @@
  * @author $Author$(hoping@baimashi.com)
  * @date $Date$
  * @version $Revision$
- * @brief 
- *  
+ * @brief
+ *
  **/
 
 #ifndef DOCUMENT_H_
@@ -18,27 +18,29 @@
 
 #include <gumbo.h>
 #include <string>
+#include <query.h>
+
 #include "Selection.h"
 
-class CDocument: public CObject
+class GUMBO_QUERY_API CDocument : public CObject
 {
-	public:
+public:
 
-		CDocument();
+   CDocument();
 
-		void parse(const std::string& aInput);
+   void parse(const std::string& aInput);
 
-		virtual ~CDocument();
+   virtual ~CDocument();
 
-		CSelection find(std::string aSelector);
+   CSelection find(std::string aSelector);
 
-	private:
+private:
 
-		void reset();
+   void reset();
 
-	private:
+private:
 
-		GumboOutput* mpOutput;
+   GumboOutput* mpOutput;
 };
 
 #endif /* DOCUMENT_H_ */

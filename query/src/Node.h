@@ -1,7 +1,7 @@
 /***************************************************************************
- * 
+ *
  * $Id$
- * 
+ *
  **************************************************************************/
 
 /**
@@ -9,8 +9,8 @@
  * @author $Author$(hoping@baimashi.com)
  * @date $Date$
  * @version $Revision$
- * @brief 
- *  
+ * @brief
+ *
  **/
 
 #ifndef NODE_H_
@@ -19,51 +19,53 @@
 #include <gumbo.h>
 #include <string>
 
+#include <query.h>
+
 class CSelection;
 
-class CNode
+class GUMBO_QUERY_API CNode
 {
-	public:
+public:
 
-		CNode(GumboNode* apNode = NULL);
+   CNode(GumboNode* apNode = NULL);
 
-		virtual ~CNode();
+   virtual ~CNode();
 
-	public:
+public:
 
-		bool valid();
+   bool valid();
 
-		CNode parent();
+   CNode parent();
 
-		CNode nextSibling();
+   CNode nextSibling();
 
-		CNode prevSibling();
+   CNode prevSibling();
 
-		unsigned int childNum();
+   unsigned int childNum();
 
-		CNode childAt(size_t i);
+   CNode childAt(size_t i);
 
-		std::string attribute(std::string key);
+   std::string attribute(std::string key);
 
-		std::string text();
+   std::string text();
 
-		std::string ownText();
+   std::string ownText();
 
-		size_t startPos();
+   size_t startPos();
 
-		size_t endPos();
+   size_t endPos();
 
-		size_t startPosOuter();
+   size_t startPosOuter();
 
-		size_t endPosOuter();
+   size_t endPosOuter();
 
-		std::string tag();
+   std::string tag();
 
-		CSelection find(std::string aSelector);
+   CSelection find(std::string aSelector);
 
-	private:
+private:
 
-		GumboNode* mpNode;
+   GumboNode* mpNode;
 };
 
 #endif /* NODE_H_ */
