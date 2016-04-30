@@ -126,23 +126,26 @@ namespace GumboQuery
       switch (apNode->type)
       {
       case GUMBO_NODE_TEXT:
-         aText = "<value>" + aText;
-         aText.append(apNode->v.text.text);
-         aText += "</value>";
+      {
+         std::string txt = apNode->v.text.text;
+         if (*const_cast<std::string::value_type*>(txt.c_str()) == '\n')
+         {
+            txt = const_cast<std::string::value_type*>(txt.c_str()) + 1;
+            aText.resize(aText.size() - 1);
+         }
+
+         aText.append(txt.c_str());
+         aText += '|';
+      }
          break;
       case GUMBO_NODE_ELEMENT:
       {
          GumboVector children = apNode->v.element.children;
-         aText = '<' + apNode->v.element.tag;
-         aText += '>';
          for (unsigned int i = 0; i < children.length; i++)
          {
             GumboNode* child = (GumboNode*) children.data[i];
             writeNodeTextWithTag(child, aText);
          }
-         aText += "</";
-         aText += apNode->v.element.tag;
-         aText += '>';
          break;
       }
       default:
